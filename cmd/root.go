@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/notWizzy/wtf/internal/history"
+	"github.com/notWizzy/wtf/internal/llm"
 	"github.com/spf13/cobra"
 )
 
@@ -11,7 +13,22 @@ var rootCmd = &cobra.Command{
 	Use:   "wtf",
 	Short: "Explains your last terminal error in plain English",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("wtf is working!")
+		lastCmd, err := history.GetLastCommand()
+		if err != nil {
+			fmt.Fprintln(os.Stderr, "Error reading history:", err)
+			os.Exit(1)
+		}
+
+		fmt.Println("Last command:", lastCmd)
+		fmt.Println("Asking Ollama...")
+
+		explanation, err := llm.Explain(lastCmd)
+		if err != nil {
+			fmt.Fprintln(os.Stderr, "Error from LLM:", err)
+			os.Exit(1)
+		}
+
+		fmt.Println(explanation)
 	},
 }
 
