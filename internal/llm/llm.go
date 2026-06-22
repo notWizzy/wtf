@@ -31,8 +31,17 @@ func Explain(errorText string) (string, error) {
 		Stream: false,
 		Messages: []Message{
 			{
-				Role:    "user",
-				Content: fmt.Sprintf("Explain this terminal error in plain English and suggest a fix:\n\n%s", errorText),
+				Role: "user",
+				Content: fmt.Sprintf(`You are a terminal error explainer. Be concise and direct.
+
+Given this error output:
+%s
+
+Respond in exactly this format, no markdown, no asterisks, no bullet symbols:
+
+WHAT HAPPENED: one sentence explaining what went wrong
+WHY: one sentence explaining the root cause
+FIX: one sentence telling exactly what to do`, errorText),
 			},
 		},
 	}
