@@ -7,35 +7,31 @@ import (
 )
 
 var (
-	titleStyle = lipgloss.NewStyle().
+	labelStyle = lipgloss.NewStyle().
 			Bold(true).
-			Foreground(lipgloss.Color("#FF5F87")).
-			MarginBottom(1)
+			Foreground(lipgloss.Color("#FF5F87"))
 
 	commandStyle = lipgloss.NewStyle().
-			Bold(true).
-			Foreground(lipgloss.Color("#FFD700")).
-			PaddingLeft(2)
+			Foreground(lipgloss.Color("#FFD700"))
 
 	explanationStyle = lipgloss.NewStyle().
-				Foreground(lipgloss.Color("#FFFFFF")).
-				PaddingLeft(2).
-				PaddingRight(4)
+				Foreground(lipgloss.Color("#FFFFFF"))
 
-	boxStyle = lipgloss.NewStyle().
-			Border(lipgloss.RoundedBorder()).
-			BorderForeground(lipgloss.Color("#FF5F87")).
-			Padding(1, 2).
-			MarginTop(1)
+	successStyle = lipgloss.NewStyle().
+			Bold(true).
+			Foreground(lipgloss.Color("#00FF87"))
 )
 
-func PrintExplanation(command string, explanation string) {
-	title := titleStyle.Render("⚡ wtf")
-	cmd := commandStyle.Render("$ " + command)
-	body := explanationStyle.Render(explanation)
-	box := boxStyle.Render(body)
+func PrintExplanation(command string, stderr string, explanation string) {
+	fmt.Println()
+	fmt.Println(labelStyle.Render("⚡ wtf") + "  " + commandStyle.Render("$ "+command))
+	fmt.Println()
+	fmt.Println(explanationStyle.Render(explanation))
+	fmt.Println()
+}
 
-	fmt.Println(title)
-	fmt.Println(cmd)
-	fmt.Println(box)
+func PrintSuccess(command string) {
+	fmt.Println()
+	fmt.Println(successStyle.Render("✓ " + command + " ran successfully"))
+	fmt.Println()
 }
