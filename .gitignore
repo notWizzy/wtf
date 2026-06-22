@@ -1,0 +1,12 @@
+# Binaries
+bin/
+*.exe
+
+# Go test cache
+*.out
+
+# Environment files
+.env
+
+# Mac junk
+.DS_Store
