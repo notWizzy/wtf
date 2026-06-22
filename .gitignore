@@ -1,14 +1,11 @@
-# Binaries
+# Compiled binary
 bin/
-*.exe
 
-# Go test cache
+# Go test output
 *.out
-
-# Environment files
-.env
 
 # Mac junk
 .DS_Store
 
-bin/
+# Environment files (if ever added back)
+.env
