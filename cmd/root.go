@@ -4,7 +4,7 @@ package cmd
 // 	"fmt"
 // 	"os"
 
-// 	"github.com/notWizzy/wtf/internal/llm"
+// 	"github.com/notWizzy/errex/internal/llm"
 // 	"github.com/spf13/cobra"
 // )
 
@@ -14,8 +14,8 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/notWizzy/wtf/internal/llm"
-	"github.com/notWizzy/wtf/internal/output"
+	"github.com/notWizzy/errex/internal/llm"
+	"github.com/notWizzy/errex/internal/output"
 	"github.com/spf13/cobra"
 )
 

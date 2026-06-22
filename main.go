@@ -1,6 +1,6 @@
 package main
 
-import "github.com/notWizzy/wtf/cmd"
+import "github.com/notWizzy/errex/cmd"
 
 func main() {
 	cmd.Execute()

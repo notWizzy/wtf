@@ -1,4 +1,4 @@
-module github.com/notWizzy/wtf
+module github.com/notWizzy/errex
 
 go 1.26.3
 
