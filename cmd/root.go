@@ -1,5 +1,13 @@
 package cmd
 
+// import (
+// 	"fmt"
+// 	"os"
+
+// 	"github.com/notWizzy/wtf/internal/llm"
+// 	"github.com/spf13/cobra"
+// )
+
 import (
 	"fmt"
 	"os"
@@ -14,7 +22,9 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "wtf [command]",
 	Short: "Explains your last terminal error in plain English",
-	Args:  cobra.MinimumNArgs(1),
+	// Run: func(cmd *cobra.Command, args []string) {
+	// 	fmt.Println("wtf is working!")
+	// },
 	Run: func(cmd *cobra.Command, args []string) {
 		command := args[0]
 		commandArgs := args[1:]
