@@ -6,6 +6,7 @@ import (
 
 	"github.com/notWizzy/wtf/internal/history"
 	"github.com/notWizzy/wtf/internal/llm"
+	"github.com/notWizzy/wtf/internal/output"
 	"github.com/spf13/cobra"
 )
 
@@ -19,16 +20,13 @@ var rootCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		fmt.Println("Last command:", lastCmd)
-		fmt.Println("Asking Ollama...")
-
 		explanation, err := llm.Explain(lastCmd)
 		if err != nil {
 			fmt.Fprintln(os.Stderr, "Error from LLM:", err)
 			os.Exit(1)
 		}
 
-		fmt.Println(explanation)
+		output.PrintExplanation(lastCmd, explanation)
 	},
 }
 
