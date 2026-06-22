@@ -24,7 +24,7 @@ var (
 
 func PrintExplanation(command string, stderr string, explanation string) {
 	fmt.Println()
-	fmt.Println(labelStyle.Render("⚡ wtf") + "  " + commandStyle.Render("$ "+command))
+	fmt.Println(labelStyle.Render("⚡ errex") + "  " + commandStyle.Render("$ "+command))
 	fmt.Println()
 	fmt.Println(explanationStyle.Render(explanation))
 	fmt.Println()

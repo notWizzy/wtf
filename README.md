@@ -62,7 +62,7 @@ ollama pull llama3.2
 ## Installation
 
 ```bash
-git clone https://github.com/notWizzy/wtf.git
+git clone https://github.com/notWizzy/errex.git
 cd wtf
 make install
 ```
