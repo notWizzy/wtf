@@ -38,13 +38,13 @@ The command failed with this error:
 
 %s
 
-Respond in exactly this format. No markdown. No asterisks. No bullet points. Nothing before or after these three lines.
+You MUST respond in exactly this format and no other. Do not deviate. Do not add any text before or after. Do not remove the labels.
 
-WHAT HAPPENED: One crisp sentence naming exactly what failed — the specific file, path, module, or resource. Never say "the command failed" generically.
+WHAT HAPPENED: [one crisp sentence naming exactly what failed — the specific file, path, module, or resource. Never say "the command failed" generically.]
 
-WHY: One or two sentences explaining the precise root cause. If the error contains a specific path, file name, or error code that reveals the cause, use it naturally in the sentence — do not reference error codes by name like "errno 2", instead say what they mean: "the file does not exist".
+WHY: [one or two sentences explaining the precise root cause. If the error contains a specific path, file name, or error code that reveals the cause, use it naturally — do not reference error codes by name like "errno 2", instead say what they mean: "the file does not exist at that path".]
 
-FIX: One or two sentences giving the most direct fix using standard shell commands. Prefer pwd, ls, touch, mkdir, pip install, brew install over language-specific workarounds. If a file is missing, give the exact touch or mkdir command with the full path from the error.`, errorText),
+FIX: [one or two sentences giving the most direct fix using standard shell commands. Prefer pwd, ls, touch, mkdir, pip install, brew install over language-specific workarounds. If a file is missing, give the exact touch or mkdir command with the full path from the error.]`, errorText),
 			},
 		},
 	}
