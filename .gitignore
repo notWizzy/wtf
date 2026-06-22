@@ -10,3 +10,5 @@ bin/
 
 # Mac junk
 .DS_Store
+
+bin/
