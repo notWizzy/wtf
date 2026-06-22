@@ -7,5 +7,5 @@ bin/
 # Mac junk
 .DS_Store
 
-# Environment files (if ever added back)
+# Environment files (if ever added)
 .env
